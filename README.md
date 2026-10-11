@@ -62,3 +62,18 @@ The seeds used are found within the code. There are two sets of seeds:
 
 - one for the **gradient extraction and noise design**
 - one for the **poisoned runs**
+
+## N4SID transfer experiment
+
+The linear identification experiment uses the supplied datasets directly. Requires MATLAB with System
+Identification Toolbox (reference: R2023b). From the repository directory:
+
+```bash
+matlab -batch "N4SID();"
+python3 Plot_N4SID.py
+```
+
+The Python plotter requires Matplotlib. `N4SID.m` fits one clean model and
+36 poisoned models: tau 25%, 50%, 100%, four epsilon values, and the three
+methods. It specifies only the known plant order, `n4sid(data, 2)`, leaving
+all identification options at their MATLAB defaults.
